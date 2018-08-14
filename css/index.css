@@ -1,0 +1,54 @@
+.akarin-header {
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+#main-logo {
+  width: 512px;
+}
+
+#akarin-desc {
+  text-align: center;
+  /*color: rgba(240, 98, 146, 1);*/
+  color: #f5f5f5;
+  margin-top: 24px;
+  opacity: 0;
+}
+
+.akarin-page:last-child {
+  height: 600vh;
+}
+
+#page1 {
+  background-color: var(--primary);
+}
+
+#page1-footer {
+  background-color: var(--primary);
+  width: 100vw;
+  position: absolute;
+  top: 100vh;
+}
+
+#page1-footer-nav {
+  height: 160px;
+}
+
+#page1-footer-nav .nav-item {
+  width: calc(100% / 4);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 225ms;
+}
+
+#page1-footer-nav .nav-item:hover {
+  background-color: rgba(244, 143, 177, 1);
+}
+
+#page1-footer-nav .nav-item svg {
+  padding: 8px;
+}
