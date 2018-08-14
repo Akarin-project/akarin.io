@@ -17,10 +17,6 @@
   opacity: 0;
 }
 
-.akarin-page:last-child {
-  height: 600vh;
-}
-
 #page1 {
   background-color: var(--primary);
 }
@@ -51,4 +47,24 @@
 
 #page1-footer-nav .nav-item svg {
   padding: 8px;
+}
+
+.akarin-introduce {
+  border: none;
+  background-color: transparent;
+}
+
+.akarin-introduce:before {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.32);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+.akarin-introduce:last-child:before {
+  height: 0;
 }
