@@ -1,0 +1,233 @@
+html {
+  color: #212121;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+:root {
+  --primary: rgba(240,98,146 ,1);
+  --secondary: rgba(248, 187, 208, 1);
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f5f5f5;
+  --dark: #343a40;
+}
+
+@font-face {
+  font-family: "Gestalt";
+  src: local("Gestalt"),
+  url(../css/font/Gestalt.woff2) format('woff2'),
+  url(../css/font/Gestalt.woff) format('woff'),
+  url(../css/font/Gestalt.ttf) format('truetype');
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+a {
+  color: var(--dark);
+}
+
+.btn.focus, .btn:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.akarin-header {
+  height: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.akarin-nav .nav-link {
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--light);
+  align-items: center;
+  -webkit-transition-duration: 125ms;
+  -o-transition-duration: 125ms;
+  transition-duration: 125ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.akarin-title {
+  font-family: Gestalt, var(--font-family-sans-serif);
+  font-size: 1.5em;
+  color: var(--light);
+}
+
+.akarin-logo {
+  font-family: Gestalt, var(--font-family-sans-serif);
+  /*color: rgba(240, 98, 146, 1);*/
+  color: #f5f5f5;
+}
+
+.akarin-logo svg {
+  overflow: visible;
+}
+
+.akarin-logo svg * {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.akarin-logo .border, .akarin-logo .border-anime {
+  /*color: rgba(252, 228, 236, 1);*/
+  color: #f5f5f5;
+}
+
+.akarin-logo.btn:active,
+.akarin-logo.btn:hover {
+  color: var(--dark);
+}
+
+.akarin-main {
+  width: 100%;
+  height: 100vh;
+  /*background: url("../img/index.png") no-repeat;*/
+  background-size: 100%;
+  background-color: var(--light);
+}
+
+.akarin-page__container {
+  padding-top: 120px;
+  height: 100%;
+}
+
+@media (max-width: var(--breakpoint-xl)) {
+  .akarin-page__container {
+    padding-top: 64px;
+  }
+}
+
+.akarin-page__center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.akarin-page__one {
+  height: 100vh;
+}
+
+.akarin-line {
+  position: absolute;
+  top: -16px;
+  height: 1px;
+  width: 100%;
+  /*background-color: rgba(240, 98, 146, 0.54);*/
+  background-color: #f5f5f5;
+}
+
+.scrollbar-track {
+  -webkit-transition-duration: 225ms !important;
+  -o-transition-duration: 225ms !important;
+  transition-duration: 225ms !important;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background-color: transparent !important;
+  z-index: 4 !important;
+}
+
+.scrollbar-track .scrollbar-thumb {
+  background-color: rgba(52, 58, 64, 0.54) !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
