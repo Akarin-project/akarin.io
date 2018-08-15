@@ -63,19 +63,57 @@
   height: 0;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .akarin-introduce:before {
     bottom: -3rem;
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   #page1-footer-nav .nav-item svg {
     height: 48px;
   }
 }
 
-
 .akarin-introduce .card-img {
   width: auto;
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.akarin-introduce .card-body {
+  opacity: 0;
+  transform: translateX(20%);
+}
+
+.akarin-introduce-btn {
+  float: right;
+  position: relative;
+  top: 1.5rem;
+  border-color: var(--primary);
+  color: var(--primary);
+  outline: none
+}
+
+.akarin-introduce-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--light);
+  box-shadow: none;
+}
+
+.akarin-introduce-btn:active,
+.akarin-introduce-btn:focus{
+  background-color: var(--secondary);
+  border-color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .akarin-introduce-btn {
+    left: -3rem;
+  }
+}
+
+.akarin-introduce-btn.disabled {
+  color: var(--primary);
 }

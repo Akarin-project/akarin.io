@@ -3,6 +3,15 @@ $(() => {
   let logoAnime = anime.timeline({
     easing: 'easeInOutCubic',
   });
+  let openAnime = anime.timeline({
+    autoplay: false,
+  })
+  let fastAnime = anime.timeline({
+    autoplay: false,
+  })
+  let bedrockAnime = anime.timeline({
+    autoplay: false,
+  })
   let logoCircle = anime.timeline({
     easing: 'easeInOutCubic',
     autoplay: false,
@@ -22,10 +31,7 @@ $(() => {
             duration: 150,
             translateY: 0,
             easing: "easeOutQuint",
-            opacity: {
-              value: 1,
-              duration: 0.1
-            },
+            opacity: 1
           })
         } else {
           anime({
@@ -36,14 +42,16 @@ $(() => {
             opacity: 0,
           })
         }
+        if (status.offset.y >= $(window).height() * 0.60) {
+          openAnime.play()
+        }
+        if (status.offset.y >= $(window).height() * 1) {
+          bedrockAnime.play()
+        }
+        if (status.offset.y >= $(window).height() * 1.3) {
+          fastAnime.play()
+        }
       });
-    }
-  });
-  let introduceAnime = anime.timeline({
-    easing: 'easeInOutCubic',
-    autoplay: false,
-    delay: (el, i) => {
-      return i * 125
     }
   });
   scrollbar.destroy();
@@ -188,24 +196,43 @@ $(() => {
         });
       }
     });
-  introduceAnime
+  openAnime
     .add({
-      targets: ".akarin-introduce .card-body",
+      targets: ".akarin-introduce#open .card-img",
+      opacity: [0, 1],
+      duration: 400,
+      translateY: ["-20%", "0"]
+    })
+    .add({
+      targets: ".akarin-introduce#open .card-body",
       opacity: [0, 1],
       duration: 500,
       translateX: ["20%", "0"]
     })
+  bedrockAnime
     .add({
-      targets: ".akarin-introduce .card-img",
+      targets: ".akarin-introduce#bedrock .card-img",
       opacity: [0, 1],
-      duration: 500,
+      duration: 400,
       translateY: ["-20%", "0"]
     })
-  scrollbar.addListener((status) => {
-    console.log($(window).height())
-    if (status.offset.y > $(window).height()) {
-      introduceAnime.play()
-    }
-  })
-  introduceAnime.play()
+    .add({
+      targets: ".akarin-introduce#bedrock .card-body",
+      opacity: [0, 1],
+      duration: 500,
+      translateX: ["20%", "0"]
+    })
+  fastAnime
+    .add({
+      targets: ".akarin-introduce#fast .card-img",
+      opacity: [0, 1],
+      duration: 400,
+      translateY: ["-20%", "0"]
+    })
+    .add({
+      targets: ".akarin-introduce#fast .card-body",
+      opacity: [0, 1],
+      duration: 500,
+      translateX: ["20%", "0"]
+    })
 });
