@@ -12,6 +12,7 @@ $(() => {
   let bedrockAnime = anime.timeline({
     autoplay: false,
   })
+  let b = [false, false, false]
   let logoCircle = anime.timeline({
     easing: 'easeInOutCubic',
     autoplay: false,
@@ -42,14 +43,17 @@ $(() => {
             opacity: 0,
           })
         }
-        if (status.offset.y >= $(window).height() * 0.60) {
+        if (status.offset.y >= $(window).height() * 0.60 && !b[1]) {
           openAnime.play()
+          b[1] = false
         }
-        if (status.offset.y >= $(window).height() * 1) {
+        if (status.offset.y >= $(window).height() * 1 && !b[2]) {
           bedrockAnime.play()
+          b[2] = false
         }
-        if (status.offset.y >= $(window).height() * 1.3) {
+        if (status.offset.y >= $(window).height() * 1.3 && !b[3]) {
           fastAnime.play()
+          b[3] = false
         }
       });
     }

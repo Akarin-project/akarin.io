@@ -30,6 +30,7 @@
 
 #page1-footer-nav {
   height: 160px;
+  padding-right: 0;
 }
 
 #page1-footer-nav .nav-item {
@@ -52,8 +53,8 @@
   content: '';
   position: absolute;
   bottom: -2rem;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.32);
+  height: 0.5px;
+  background-color: rgba(244, 143, 177, 0.32);
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -87,12 +88,16 @@
 }
 
 .akarin-introduce-btn {
-  float: right;
-  position: relative;
   top: 1.5rem;
   border-color: var(--primary);
   color: var(--primary);
   outline: none
+}
+
+@media (max-width: 768px) {
+  .akarin-introduce-btn {
+    width: 100%;
+  }
 }
 
 .akarin-introduce-btn:hover {
@@ -103,7 +108,7 @@
 }
 
 .akarin-introduce-btn:active,
-.akarin-introduce-btn:focus{
+.akarin-introduce-btn:focus {
   background-color: var(--secondary);
   border-color: var(--primary);
 }

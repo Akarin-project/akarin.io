@@ -176,10 +176,11 @@ ul > li {
 
 .akarin-page__container {
   padding-top: 120px;
+  padding-bottom: 64px;
   height: 100%;
 }
 
-@media (max-width: var(--breakpoint-xl)) {
+@media (max-width: 1200px) {
   .akarin-page__container {
     padding-top: 64px;
   }
@@ -209,6 +210,15 @@ ul > li {
   margin-right: 48px;
   width: 128px;
   height: 128px;
+}
+
+.akarin-footer {
+  background-color: var(--primary);
+}
+
+.akarin-footer * {
+  font-size: 12px;
+  color: rgba(255,255,255,0.54);
 }
 
 .scrollbar-track {
