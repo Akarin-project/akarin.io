@@ -75,6 +75,7 @@ textarea {
 body {
   overflow: hidden;
   height: 100vh;
+  min-width: 360px;
 }
 
 a {
@@ -99,12 +100,32 @@ ul > li {
   height: 64px;
   padding-left: 24px;
   padding-right: 24px;
+  background-color: var(--primary);
+  flex-wrap: nowrap;
+}
+
+.akarin-nav {
+  width: 100%;
+}
+
+.akarin-header .akarin-nav {
+  justify-content: space-evenly;
+}
+
+.akarin-nav .nav-item {
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 125ms;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.akarin-nav .nav-item:hover {
+  background-color: rgba(244, 143, 177, 1);
 }
 
 .akarin-nav .nav-link {
   text-transform: uppercase;
   text-align: center;
-  color: var(--light);
+  color: var(--light) !important;
   align-items: center;
   -webkit-transition-duration: 125ms;
   -o-transition-duration: 125ms;
@@ -112,6 +133,10 @@ ul > li {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.akarin-header .akarin-nav .akarin-nav-icon {
+  width: 24px;
 }
 
 .akarin-font {

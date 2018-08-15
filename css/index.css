@@ -37,16 +37,10 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 225ms;
-}
-
-#page1-footer-nav .nav-item:hover {
-  background-color: rgba(244, 143, 177, 1);
 }
 
 #page1-footer-nav .nav-item svg {
-  padding: 8px;
+  height: 64px;
 }
 
 .akarin-introduce {
@@ -57,7 +51,7 @@
 .akarin-introduce:before {
   content: '';
   position: absolute;
-  bottom: -3rem;
+  bottom: -2rem;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.32);
   left: 50%;
@@ -67,4 +61,21 @@
 
 .akarin-introduce:last-child:before {
   height: 0;
+}
+
+@media (min-width: 768px){
+  .akarin-introduce:before {
+    bottom: -3rem;
+  }
+}
+
+@media (max-width: 768px){
+  #page1-footer-nav .nav-item svg {
+    height: 48px;
+  }
+}
+
+
+.akarin-introduce .card-img {
+  width: auto;
 }

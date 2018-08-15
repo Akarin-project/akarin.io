@@ -15,8 +15,35 @@ $(() => {
           $(scrollbar.track.yAxis.element).css('opacity', 0);
         else
           $(scrollbar.track.yAxis.element).css('opacity', 1);
-        $('.akarin-main').css("background-position-y", status.offset.y / status.limit.y * 100 + "%");
+        $('.akarin-page').css("background-position-y", status.offset.y / status.limit.y * 100 + "%");
+        if (status.offset.y >= $(window).height()) {
+          anime({
+            targets: ".akarin-header",
+            duration: 150,
+            translateY: 0,
+            easing: "easeOutQuint",
+            opacity: {
+              value: 1,
+              duration: 0.1
+            },
+          })
+        } else {
+          anime({
+            targets: ".akarin-header",
+            duration: 100,
+            translateY: "-100%",
+            easing: "easeOutQuad",
+            opacity: 0,
+          })
+        }
       });
+    }
+  });
+  let introduceAnime = anime.timeline({
+    easing: 'easeInOutCubic',
+    autoplay: false,
+    delay: (el, i) => {
+      return i * 125
     }
   });
   scrollbar.destroy();
@@ -146,7 +173,7 @@ $(() => {
       duration: 100,
       delay: 150
     })
-    .add([{
+    .add({
       targets: '#line path',
       strokeDasharray: 300,
       strokeOpacity: 0,
@@ -160,5 +187,25 @@ $(() => {
           duration: 1000,
         });
       }
-    }]);
+    });
+  introduceAnime
+    .add({
+      targets: ".akarin-introduce .card-body",
+      opacity: [0, 1],
+      duration: 500,
+      translateX: ["20%", "0"]
+    })
+    .add({
+      targets: ".akarin-introduce .card-img",
+      opacity: [0, 1],
+      duration: 500,
+      translateY: ["-20%", "0"]
+    })
+  scrollbar.addListener((status) => {
+    console.log($(window).height())
+    if (status.offset.y > $(window).height()) {
+      introduceAnime.play()
+    }
+  })
+  introduceAnime.play()
 });
