@@ -221,6 +221,10 @@ ul > li {
   color: rgba(255,255,255,0.54);
 }
 
+.akarin-footer a:hover {
+  color: rgba(255,255,255,0.87);
+}
+
 .scrollbar-track {
   -webkit-transition-duration: 225ms !important;
   -o-transition-duration: 225ms !important;
