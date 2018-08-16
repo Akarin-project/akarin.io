@@ -26,6 +26,7 @@
   width: 100vw;
   position: absolute;
   top: 100vh;
+  left: 0;
 }
 
 #page1-footer-nav {
