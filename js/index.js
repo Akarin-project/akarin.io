@@ -43,15 +43,15 @@ $(() => {
             opacity: 0,
           })
         }
-        if (status.offset.y >= $(window).height() * 0.60 && !b[1]) {
+        if ($("#open").offset().top + $("#open").height() * 0.5 < $(window).height() && !b[1]) {
           openAnime.play()
           b[1] = false
         }
-        if (status.offset.y >= $(window).height() * 1 && !b[2]) {
+        if ($("#bedrock").offset().top + $("#bedrock").height() * 0.5 < $(window).height() && !b[2]) {
           bedrockAnime.play()
           b[2] = false
         }
-        if (status.offset.y >= $(window).height() * 1.3 && !b[3]) {
+        if ($("#fast").offset().top + $("#fast").height() * 0.5 < $(window).height() && !b[3]) {
           fastAnime.play()
           b[3] = false
         }

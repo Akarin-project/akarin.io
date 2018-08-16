@@ -54,7 +54,7 @@
   position: absolute;
   bottom: -2rem;
   height: 0.5px;
-  background-color: rgba(244, 143, 177, 0.32);
+  background-color: rgba(244, 143, 177, 0.54);
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
